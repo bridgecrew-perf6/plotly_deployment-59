@@ -92,7 +92,10 @@ function buildCharts(sample) {
     let barLayout = {
       title: "Top 10 Bacteria Found in Sample",
       xaxis: {title: "Sample Values"},
-      yaxis: {title: "OTU ID"}
+      yaxis: {title: "OTU ID"},
+      //making the chart background transparent to fit HTML page modifications later
+      paper_bgcolor:'rgba(0,0,0,0)',
+      plot_bgcolor:'rgba(0,0,0,0)'
     };
 
     // 10. Use Plotly to plot the data with the layout. 
@@ -150,12 +153,16 @@ function buildCharts(sample) {
           { range: [8, 10], color: "green" }
         ],
         dtick:2
-      }
+      },
+
     }];
     
     // 5. Create the layout for the gauge chart.
     let gaugeLayout = { 
-      automargin: true
+      automargin: true,
+      //making the chart background transparent to fit HTML page modifications later
+      paper_bgcolor:'rgba(0,0,0,0)',
+      plot_bgcolor:'rgba(0,0,0,0)'
     };
 
     // // 6. Use Plotly to plot the gauge data and layout.
