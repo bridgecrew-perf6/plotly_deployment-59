@@ -135,27 +135,27 @@ function buildCharts(sample) {
     // 4. Create the trace for the gauge chart.
     let gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
-      title: {text: "Belly Button Washing Frequency", font: {size: 24}},
-      title: {text: "Scrubs per Week", font: {size:14}},
+      title: {text: "<b>Belly Button Washing Frequency </b> <br></br>Scrubs per Week"},
       value: wfreq,
       type: "indicator",
       mode: "gauge+number",
       gauge: {
-        axis: {range: [0, 10]},
-        bar: { color: "black" }},
+        axis: {range: [null, 10], dtick: "2"},
+        bar: { color: "black" },
         steps: [
           { range: [0, 2], color: "red" },
           { range: [2, 4], color: "orange" },
           { range: [4, 6], color: "yellow" },
           { range: [6, 8], color: "lightgreen" },
           { range: [8, 10], color: "green" }
-        ]
+        ],
+        dtick:2
+      }
     }];
     
     // 5. Create the layout for the gauge chart.
     let gaugeLayout = { 
-      width: 500,
-      height: 400,
+      automargin: true
     };
 
     // // 6. Use Plotly to plot the gauge data and layout.
